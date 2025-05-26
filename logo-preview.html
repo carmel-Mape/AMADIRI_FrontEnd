@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMADIRI Logo Preview</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .preview-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .preview-section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .preview-title {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            align-items: center;
+        }
+
+        .logo-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .logo-label {
+            margin-top: 10px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Différents fonds pour tester le logo */
+        .bg-white { background: white; }
+        .bg-dark { background: #333; }
+        .bg-green { background: #4CAF50; }
+        .bg-gradient {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <div class="preview-section">
+            <h2 class="preview-title">Taille Standard</h2>
+            <div class="logo-grid">
+                <div class="logo-item bg-white">
+                    <img src="logo.svg" alt="AMADIRI Logo" width="100">
+                    <div class="logo-label">100x100px</div>
+                </div>
+                <div class="logo-item bg-white">
+                    <img src="logo.svg" alt="AMADIRI Logo" width="150">
+                    <div class="logo-label">150x150px</div>
+                </div>
+                <div class="logo-item bg-white">
+                    <img src="logo.svg" alt="AMADIRI Logo" width="200">
+                    <div class="logo-label">200x200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h2 class="preview-title">Différents Fonds</h2>
+            <div class="logo-grid">
+                <div class="logo-item bg-white">
+                    <img src="logo.svg" alt="AMADIRI Logo" width="150">
+                    <div class="logo-label">Fond Blanc</div>
+                </div>
+                <div class="logo-item bg-dark">
+                    <img src="logo.svg" alt="AMADIRI Logo" width="150">
+                    <div class="logo-label" style="color: white;">Fond Sombre</div>
+                </div>
+                <div class="logo-item bg-green">
+                    <img src="logo.svg" alt="AMADIRI Logo" width="150">
+                    <div class="logo-label" style="color: white;">Fond Vert</div>
+                </div>
+                <div class="logo-item bg-gradient">
+                    <img src="logo.svg" alt="AMADIRI Logo" width="150">
+                    <div class="logo-label" style="color: white;">Dégradé Vert</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h2 class="preview-title">Animation en Action</h2>
+            <div class="logo-grid">
+                <div class="logo-item bg-white">
+                    <img src="logo.svg" alt="AMADIRI Logo" width="200">
+                    <div class="logo-label">Logo Animé (200x200px)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,124 @@
+/* Login Page Specific Styles */
+body {
+  background: linear-gradient(135deg, var(--primary-100), var(--secondary-100));
+}
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 480px;
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.login-header {
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
+  color: white;
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+}
+
+.login-header .logo-container {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto var(--space-4);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius-md);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.login-header .logo {
+  font-size: 2rem;
+}
+
+.login-header h1 {
+  color: white;
+  margin-bottom: var(--space-2);
+  font-size: 2rem;
+}
+
+.login-header p {
+  opacity: 0.8;
+  margin-bottom: 0;
+}
+
+.login-form {
+  padding: var(--space-8) var(--space-6);
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: var(--space-6);
+  color: var(--neutral-800);
+}
+
+.login-form .input-container {
+  position: relative;
+  margin-bottom: var(--space-2);
+}
+
+.login-form input {
+  padding: var(--space-4) var(--space-4) var(--space-4) var(--space-10);
+  border: 1px solid var(--neutral-300);
+  transition: all var(--transition-fast);
+}
+
+.login-form .input-icon {
+  left: var(--space-3);
+  right: auto;
+  color: var(--primary-500);
+}
+
+.login-form button {
+  width: 100%;
+  padding: var(--space-4);
+  margin-top: var(--space-6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-3);
+  transition: all var(--transition-fast);
+  overflow: hidden;
+  position: relative;
+}
+
+.login-form button .btn-icon {
+  margin-left: var(--space-2);
+  transition: transform var(--transition-fast);
+}
+
+.login-form button:hover .btn-icon {
+  transform: translateX(4px);
+}
+
+/* Animation for Login Card */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-card {
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,177 @@
+/* Applications Page Specific Styles */
+.task-details {
+  margin-bottom: var(--space-6);
+}
+
+.task-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+.info-row {
+  margin-bottom: var(--space-4);
+}
+
+.info-label {
+  font-weight: 500;
+  color: var(--neutral-600);
+  margin-bottom: var(--space-1);
+}
+
+.info-value {
+  color: var(--neutral-800);
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.skill-tag {
+  background-color: var(--primary-100);
+  color: var(--primary-700);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--border-radius-md);
+  font-size: 0.875rem;
+}
+
+#applicationsTable th:nth-child(1) {
+  width: 20%;
+}
+
+#applicationsTable th:nth-child(2) {
+  width: 35%;
+}
+
+#applicationsTable th:nth-child(3) {
+  width: 15%;
+}
+
+#applicationsTable th:nth-child(4) {
+  width: 15%;
+}
+
+#applicationsTable th:nth-child(5) {
+  width: 15%;
+}
+
+.status-badge {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--border-radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+.status-badge.status-pending {
+  background-color: var(--neutral-100);
+  color: var(--neutral-700);
+}
+
+.status-badge.status-accepted {
+  background-color: var(--success-100);
+  color: var(--success-700);
+}
+
+.status-badge.status-refused {
+  background-color: var(--error-100);
+  color: var(--error-700);
+}
+
+.status-badge.status-pending::before,
+.status-badge.status-accepted::before,
+.status-badge.status-refused::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: var(--space-2);
+}
+
+.status-badge.status-pending::before {
+  background-color: var(--neutral-500);
+}
+
+.status-badge.status-accepted::before {
+  background-color: var(--success-500);
+}
+
+.status-badge.status-refused::before {
+  background-color: var(--error-500);
+}
+
+/* Application Modal */
+.application-info {
+  margin-bottom: var(--space-6);
+}
+
+.status-change-section {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--neutral-200);
+}
+
+.status-change-section h3 {
+  margin-bottom: var(--space-4);
+  font-size: 1rem;
+}
+
+.status-buttons {
+  display: flex;
+  gap: var(--space-4);
+}
+
+#acceptBtn, #refuseBtn {
+  flex: 1;
+}
+
+/* Filter animation */
+#statusFilter {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  padding-right: var(--space-8);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23718096' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-2) center;
+  background-size: 16px;
+}
+
+#statusFilter:focus {
+  border-color: var(--primary-400);
+  box-shadow: 0 0 0 3px var(--primary-100);
+}
+
+/* Table row hover effect */
+#applicationsTableBody tr {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#applicationsTableBody tr:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  z-index: 10;
+  position: relative;
+}
+
+/* Status change button hover effects */
+.status-buttons button {
+  transition: transform 0.2s ease;
+}
+
+.status-buttons button:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .task-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .status-buttons {
+    flex-direction: column;
+  }
+}

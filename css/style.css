@@ -1,0 +1,207 @@
+/* Variables */
+:root {
+    --primary-color: #4CAF50;
+    --primary-dark: #388E3C;
+    --primary-light: #C8E6C9;
+    --text-color: #333;
+    --text-light: #666;
+    --background-color: #f5f5f5;
+    --white: #fff;
+    --error-color: #f44336;
+    --success-color: #4CAF50;
+    --border-color: #ddd;
+}
+
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+body.auth-bg {
+    min-height: 100vh;
+    background: #181c1f;
+    position: relative;
+}
+
+body.auth-bg::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    background: rgba(24,28,31,0.82);
+}
+
+body.auth-bg::after {
+    content: '';
+    position: fixed;
+    top: 50%; left: 50%;
+    width: 480px;
+    height: 480px;
+    transform: translate(-50%, -50%);
+    background: url('../assets/logo-amadiri.png') no-repeat center center;
+    background-size: contain;
+    opacity: 0.18;
+    z-index: 1;
+    pointer-events: none;
+    filter: drop-shadow(0 0 32px #4caf50cc);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Styles pour l'authentification */
+.auth-container {
+    max-width: 400px;
+    margin: 60px auto;
+    background: rgba(24, 28, 31, 0.93);
+    border-radius: 14px;
+    box-shadow: 0 4px 18px 0 rgba(76, 175, 80, 0.13), 0 1.5px 8px 0 #e100ff22;
+    padding: 32px 24px 24px 24px;
+    backdrop-filter: blur(2px);
+    border: 1.5px solid rgba(76, 175, 80, 0.10);
+    position: relative;
+    z-index: 2;
+}
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.auth-form {
+    padding: 20px 0;
+}
+
+.auth-form.hidden {
+    display: none;
+}
+
+.auth-form h2 {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px #4caf50cc, 0 1px 0 #000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    font-weight: 500;
+    text-shadow: 0 1px 4px #000a;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1.5px solid #4caf50;
+    border-radius: 4px;
+    font-size: 16px;
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    box-shadow: 0 1px 8px 0 #4caf5022;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #e100ff;
+    background: rgba(255,255,255,0.18);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #4caf50 0%, #e100ff 100%);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 2px 12px 0 #4caf5077;
+    border: none;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+    color: #181c1f;
+}
+
+/* Messages d'erreur */
+.error-message {
+    color: var(--error-color);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    body.auth-bg {
+        background-size: 220px 220px;
+    }
+    .auth-container {
+        margin: 24px 8px;
+        padding: 18px 6px 12px 6px;
+    }
+}
+
+/* Logo très visible sur la page d'authentification */
+.auth-logo-container {
+    display: none;
+}
+
+/* Logo discret dans la sidebar */
+.sidebar-logo {
+    width: 48px;
+    height: auto;
+    opacity: 0.85;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    background: #181c1f;
+    padding: 0.5rem;
+    transition: opacity 0.2s;
+}
+.sidebar-logo:hover {
+    opacity: 1;
+} 
